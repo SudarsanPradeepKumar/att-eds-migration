@@ -1,0 +1,94 @@
+/*
+ * Form-Contact Block - AT&T Business Style
+ * Contact form with styled inputs
+ */
+
+.form-contact {
+  padding: var(--spacing-l);
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+}
+
+.form-contact .contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-m);
+  max-width: 800px;
+}
+
+.form-contact .form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Full width for textarea field */
+.form-contact .form-field:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+.form-contact label {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.form-contact input,
+.form-contact textarea {
+  width: 100%;
+  padding: var(--spacing-s);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  font-size: var(--font-size-m);
+  font-family: inherit;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-contact input:focus,
+.form-contact textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.1);
+}
+
+.form-contact input::placeholder,
+.form-contact textarea::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.form-contact textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-contact .form-submit {
+  grid-column: 1 / -1;
+  margin-top: var(--spacing-s);
+}
+
+.form-contact button.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-s) var(--spacing-xl);
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.form-contact button.primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Responsive */
+@media (width < 600px) {
+  .form-contact .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-contact {
+    padding: var(--spacing-m);
+  }
+}

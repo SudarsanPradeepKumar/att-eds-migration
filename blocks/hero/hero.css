@@ -1,3 +1,9 @@
+/*
+ * Hero Block - AT&T Business Style
+ * Full-width hero with background image and text overlay
+ */
+
+/* Container removes default wrapper constraints */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,23 +11,104 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  padding: var(--spacing-xl) var(--spacing-m);
+  background-color: var(--color-surface-dark);
+  overflow: hidden;
 }
 
+/* Content container */
+.hero > div {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Typography */
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  color: var(--color-text-inverse);
+  font-size: var(--heading-size-h1);
+  letter-spacing: var(--letter-spacing-h1);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-m);
+  max-width: 700px;
 }
 
+.hero h2 {
+  color: var(--color-text-inverse);
+  font-size: var(--heading-size-h2);
+  letter-spacing: var(--letter-spacing-h2);
+}
+
+.hero p {
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-normal);
+  max-width: 600px;
+  margin-bottom: var(--spacing-m);
+}
+
+/* Eyebrow text */
+.hero .eyebrow,
+.hero p:first-of-type:has(+ h1),
+.hero > div > p:first-child {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-xs);
+  opacity: 0.9;
+}
+
+/* Button styling */
+.hero a.button {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-color);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  min-height: var(--button-min-height);
+  font-size: var(--button-font-size);
+  margin-right: var(--spacing-s);
+}
+
+.hero a.button:hover {
+  background-color: var(--button-primary-bg-hover);
+}
+
+.hero a.button.secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-text-inverse);
+  color: var(--color-text-inverse);
+}
+
+.hero a.button.secondary:hover {
+  background-color: var(--color-text-inverse);
+  color: var(--button-primary-bg);
+}
+
+/* Background image */
 .hero picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+}
+
+.hero picture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 35, 41, 0.85) 0%,
+    rgba(29, 35, 41, 0.6) 50%,
+    rgba(29, 35, 41, 0.2) 100%
+  );
 }
 
 .hero img {
@@ -30,8 +117,104 @@
   height: 100%;
 }
 
-@media (width >= 900px) {
+/* Hero variants */
+
+/* Light hero (white background) */
+.hero.light {
+  background-color: var(--color-background);
+}
+
+.hero.light h1,
+.hero.light h2,
+.hero.light p {
+  color: var(--color-text-dark);
+}
+
+.hero.light picture::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
+
+/* Blue hero (AT&T branded) */
+.hero.blue {
+  background-color: var(--color-att-blue);
+}
+
+.hero.blue picture::after {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 56, 143, 0.9) 0%,
+    rgba(0, 56, 143, 0.6) 50%,
+    rgba(0, 56, 143, 0.2) 100%
+  );
+}
+
+/* Centered hero */
+.hero.centered {
+  text-align: center;
+}
+
+.hero.centered > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero.centered h1,
+.hero.centered p {
+  max-width: 800px;
+}
+
+.hero.centered picture::after {
+  background: linear-gradient(
+    180deg,
+    rgba(29, 35, 41, 0.7) 0%,
+    rgba(29, 35, 41, 0.5) 100%
+  );
+}
+
+/* Short hero variant */
+.hero.short {
+  min-height: 300px;
+  padding: var(--spacing-l) var(--spacing-m);
+}
+
+/* Tall hero variant */
+.hero.tall {
+  min-height: 600px;
+}
+
+/* Responsive adjustments */
+@media (width >= 768px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 450px;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+
+  .hero h1 {
+    font-size: var(--heading-size-h1);
+  }
+}
+
+@media (width >= 1024px) {
+  .hero {
+    min-height: 500px;
+    padding: var(--spacing-xxl) var(--spacing-xl);
+  }
+
+  .hero.tall {
+    min-height: 700px;
+  }
+
+  /* Two-column hero layout */
+  .hero.split > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
   }
 }

@@ -1,0 +1,223 @@
+/*
+ * Design Tokens - AT&T Business & FirstNet Multi-Site
+ * Extracted from business.att.com on 2024
+ * These tokens provide the foundation for both sites with site-specific overrides
+ */
+
+:root {
+  /*
+   * ===========================================
+   * AT&T BRAND COLORS (Extracted from business.att.com)
+   * ===========================================
+   */
+
+  /* Primary Brand Colors */
+  --color-att-blue: #00388f;           /* rgb(0, 56, 143) - Primary CTA buttons */
+  --color-att-light-blue: #0074b3;     /* rgb(0, 116, 179) - Links, accents */
+  --color-att-globe-blue: #0057b8;     /* AT&T Globe Blue */
+  --color-att-cyan: #009fdb;           /* AT&T Light Cyan */
+  --color-att-orange: #ff7200;         /* AT&T Orange accent */
+
+  /* Background Colors */
+  --color-background: #ffffff;
+  --color-background-alt: #f2f2f2;
+  --color-background-light: #f2fafd;   /* rgb(242, 250, 253) - Light blue tint */
+  --color-surface: #ffffff;
+  --color-surface-dark: #1d2329;       /* rgb(29, 35, 41) - Dark sections */
+
+  /* Text Colors */
+  --color-text-primary: #191919;       /* rgb(25, 25, 25) - Body text */
+  --color-text-dark: #1d2329;          /* rgb(29, 35, 41) - Headings */
+  --color-text-secondary: #454b52;     /* rgb(69, 75, 82) - Secondary text */
+  --color-text-muted: #6e6e6e;         /* Muted text */
+  --color-text-inverse: #ffffff;       /* White text on dark bg */
+  --color-text-link: #0074b3;          /* Link color */
+  --color-text-link-hover: #00388f;    /* Link hover */
+
+  /* Border Colors */
+  --color-border: #878c94;             /* rgb(135, 140, 148) - Form borders */
+  --color-border-light: #d2d2d2;
+  --color-border-dark: #333333;
+
+  /* Status Colors */
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #ff0000;              /* rgb(255, 0, 0) - Error state */
+  --color-info: #0074b3;
+
+  /*
+   * ===========================================
+   * TYPOGRAPHY (Extracted from business.att.com)
+   * ===========================================
+   */
+
+  /* Font Families - AT&T Aleck Sans */
+  --font-family-primary: "attAleckSans-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-heading: "attAleckSans-Bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-medium: "attAleckSans-Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Inconsolata", "Fira Code", monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+
+  /* Heading Sizes (Extracted) */
+  --heading-size-h1: 38px;             /* Mobile: 38px */
+  --heading-size-h2: 38px;
+  --heading-size-h3: 28px;
+  --heading-size-h4: 22px;
+  --heading-size-h5: 18px;
+  --heading-size-h6: 16px;
+
+  /* Letter Spacing (Extracted - tight for headings) */
+  --letter-spacing-h1: -1.14px;
+  --letter-spacing-h2: -1.14px;
+  --letter-spacing-h3: -0.84px;
+  --letter-spacing-h4: -0.66px;
+  --letter-spacing-body: normal;
+
+  /* Line Heights */
+  --line-height-tight: 1.15;           /* Headings */
+  --line-height-normal: 1.5;           /* Body text */
+  --line-height-relaxed: 1.75;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /*
+   * ===========================================
+   * SPACING SYSTEM
+   * ===========================================
+   */
+
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  --spacing-xxxl: 96px;
+
+  /*
+   * ===========================================
+   * BUTTON TOKENS (Extracted from business.att.com)
+   * ===========================================
+   */
+
+  /* Primary Button - Filled blue */
+  --button-primary-bg: #00388f;
+  --button-primary-color: #f2fafd;
+  --button-primary-bg-hover: #002d73;
+  --button-primary-border: none;
+
+  /* Secondary Button - Outline */
+  --button-secondary-bg: transparent;
+  --button-secondary-color: #f2fafd;
+  --button-secondary-border: 2px solid #f2fafd;
+  --button-secondary-bg-hover: rgba(255, 255, 255, 0.1);
+
+  /* Text Link Button */
+  --button-text-color: #0074b3;
+  --button-text-color-hover: #00388f;
+
+  /* Button Dimensions */
+  --button-padding: 0 32px;
+  --button-border-radius: 28px;        /* Pill shape */
+  --button-font-size: 14px;
+  --button-line-height: 14px;
+  --button-min-height: 44px;
+  --button-transition: 0.2s ease;
+
+  /*
+   * ===========================================
+   * FORM TOKENS (Extracted)
+   * ===========================================
+   */
+
+  --input-padding: 12px 16px;
+  --input-border: 1px solid #878c94;
+  --input-border-radius: 8px;
+  --input-font-size: 14px;
+  --input-bg: #ffffff;
+  --input-border-focus: 1px solid #0074b3;
+  --input-box-shadow-focus: 0 0 0 3px rgba(0, 116, 179, 0.15);
+
+  /*
+   * ===========================================
+   * LAYOUT TOKENS
+   * ===========================================
+   */
+
+  --max-content-width: 1200px;
+  --max-content-width-wide: 1440px;
+  --max-content-width-narrow: 800px;
+
+  /* Navigation */
+  --nav-height: 64px;
+  --nav-height-mobile: 56px;
+
+  /*
+   * ===========================================
+   * EFFECTS
+   * ===========================================
+   */
+
+  /* Border Radius */
+  --radius-xs: 2px;
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-s: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-m: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-l: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Z-Index Scale */
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-fixed: 300;
+  --z-index-modal-backdrop: 400;
+  --z-index-modal: 500;
+  --z-index-popover: 600;
+  --z-index-tooltip: 700;
+}
+
+/* Responsive Token Adjustments */
+@media (width >= 768px) {
+  :root {
+    --heading-size-h1: 48px;
+    --heading-size-h2: 42px;
+    --heading-size-h3: 32px;
+    --heading-size-h4: 24px;
+    --letter-spacing-h1: -1.44px;
+    --letter-spacing-h2: -1.26px;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+    --heading-size-h1: 56px;
+    --heading-size-h2: 48px;
+    --heading-size-h3: 36px;
+    --heading-size-h4: 28px;
+    --nav-height: 72px;
+  }
+}

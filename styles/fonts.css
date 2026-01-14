@@ -1,36 +1,99 @@
+/*
+ * AT&T Aleck Sans Font Configuration
+ *
+ * AT&T Aleck Sans is a proprietary typeface. These @font-face rules
+ * are configured to load the fonts if available. The fonts would need
+ * to be obtained through proper licensing from AT&T.
+ *
+ * System font fallbacks are provided for development and accessibility.
+ */
+
 /* stylelint-disable max-line-length */
-@font-face {
-  font-family: roboto-condensed;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-condensed-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 
+/* AT&T Aleck Sans - Regular (400) */
 @font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/roboto-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-medium.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: roboto;
+  font-family: attAleckSans-Regular;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/roboto-regular.woff2') format('woff2');
+  src: url('../fonts/ATTAleckSans-Regular.woff2') format('woff2'),
+       url('../fonts/ATTAleckSans-Regular.woff') format('woff');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* AT&T Aleck Sans - Medium (500) */
+@font-face {
+  font-family: attAleckSans-Medium;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/ATTAleckSans-Medium.woff2') format('woff2'),
+       url('../fonts/ATTAleckSans-Medium.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* AT&T Aleck Sans - Bold (700) */
+@font-face {
+  font-family: attAleckSans-Bold;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ATTAleckSans-Bold.woff2') format('woff2'),
+       url('../fonts/ATTAleckSans-Bold.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* AT&T Aleck Sans - Light (300) */
+@font-face {
+  font-family: attAleckSans-Light;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/ATTAleckSans-Light.woff2') format('woff2'),
+       url('../fonts/ATTAleckSans-Light.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
+ * Brooklyn Font Family (FirstNet Headings)
+ * Brooklyn is used for prominent headings on FirstNet
+ */
+
+/* Brooklyn - Medium (500) */
+@font-face {
+  font-family: Brooklyn-Medium;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/Brooklyn-Medium.woff2') format('woff2'),
+       url('../fonts/Brooklyn-Medium.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*
+ * Fallback Font Metrics Adjustment
+ * These rules adjust system fonts to better match AT&T Aleck Sans metrics,
+ * reducing layout shift when the custom fonts load.
+ */
+
+@font-face {
+  font-family: attAleckSans-fallback;
+  src: local('Helvetica Neue'), local('Helvetica'), local('Arial');
+  font-weight: 400;
+  font-style: normal;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: attAleckSans-bold-fallback;
+  src: local('Helvetica Neue Bold'), local('Helvetica Bold'), local('Arial Bold');
+  font-weight: 700;
+  font-style: normal;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 22%;
+  line-gap-override: 0%;
 }

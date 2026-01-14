@@ -1,0 +1,241 @@
+/*
+ * Tabs Block - AT&T Business Style
+ * Tabbed content navigation
+ */
+
+.tabs {
+  padding: var(--spacing-m) 0;
+}
+
+/* Tab navigation */
+.tabs-list {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--color-border-light);
+  margin-bottom: var(--spacing-m);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab button */
+.tabs-list button {
+  background: none;
+  border: none;
+  padding: var(--spacing-s) var(--spacing-m);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+  min-height: auto;
+  border-radius: 0;
+}
+
+.tabs-list button:hover {
+  color: var(--color-text-dark);
+  background: none;
+  transform: none;
+}
+
+.tabs-list button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: transparent;
+  transition: background-color var(--transition-fast);
+}
+
+.tabs-list button[aria-selected="true"] {
+  color: var(--color-att-blue);
+}
+
+.tabs-list button[aria-selected="true"]::after {
+  background-color: var(--color-att-blue);
+}
+
+/* Tab panels */
+.tabs-panel {
+  display: none;
+  animation: fadeIn var(--transition-normal);
+}
+
+.tabs-panel[aria-hidden="false"] {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tab panel content */
+.tabs-panel > div {
+  padding: var(--spacing-s) 0;
+}
+
+.tabs-panel h3 {
+  margin-bottom: var(--spacing-s);
+}
+
+.tabs-panel p {
+  color: var(--color-text-secondary);
+}
+
+/*
+ * Tab Variants
+ */
+
+/* Pill tabs - rounded buttons */
+.tabs.pill .tabs-list {
+  border-bottom: none;
+  gap: var(--spacing-xs);
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-xxs);
+  border-radius: var(--button-border-radius);
+  width: fit-content;
+}
+
+.tabs.pill .tabs-list button {
+  padding: var(--spacing-xs) var(--spacing-m);
+  border-radius: calc(var(--button-border-radius) - 2px);
+}
+
+.tabs.pill .tabs-list button::after {
+  display: none;
+}
+
+.tabs.pill .tabs-list button[aria-selected="true"] {
+  background-color: var(--color-background);
+  color: var(--color-att-blue);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Boxed tabs */
+.tabs.boxed .tabs-list {
+  border: 1px solid var(--color-border-light);
+  border-bottom: none;
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  background-color: var(--color-background-alt);
+}
+
+.tabs.boxed .tabs-list button {
+  border-right: 1px solid var(--color-border-light);
+}
+
+.tabs.boxed .tabs-list button:last-child {
+  border-right: none;
+}
+
+.tabs.boxed .tabs-list button[aria-selected="true"] {
+  background-color: var(--color-background);
+  margin-bottom: -2px;
+  padding-bottom: calc(var(--spacing-s) + 2px);
+}
+
+.tabs.boxed .tabs-list button::after {
+  display: none;
+}
+
+.tabs.boxed .tabs-panel {
+  border: 1px solid var(--color-border-light);
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  padding: var(--spacing-m);
+}
+
+/* Vertical tabs */
+.tabs.vertical {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--spacing-m);
+}
+
+.tabs.vertical .tabs-list {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 2px solid var(--color-border-light);
+}
+
+.tabs.vertical .tabs-list button {
+  text-align: left;
+  padding: var(--spacing-s);
+}
+
+.tabs.vertical .tabs-list button::after {
+  bottom: auto;
+  left: auto;
+  right: -2px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+}
+
+/* Centered tabs */
+.tabs.centered .tabs-list {
+  justify-content: center;
+}
+
+/* Dark variant */
+.tabs.dark .tabs-list {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.tabs.dark .tabs-list button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tabs.dark .tabs-list button:hover {
+  color: var(--color-text-inverse);
+}
+
+.tabs.dark .tabs-list button[aria-selected="true"] {
+  color: var(--color-text-inverse);
+}
+
+.tabs.dark .tabs-list button[aria-selected="true"]::after {
+  background-color: var(--color-text-inverse);
+}
+
+.tabs.dark .tabs-panel p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*
+ * Responsive
+ */
+@media (width < 768px) {
+  .tabs.vertical {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs.vertical .tabs-list {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 2px solid var(--color-border-light);
+    overflow-x: auto;
+  }
+
+  .tabs.vertical .tabs-list button::after {
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: auto;
+    height: 3px;
+  }
+}

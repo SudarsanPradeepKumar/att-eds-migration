@@ -1,0 +1,39 @@
+{
+  "variantName": "form-contact",
+  "baseBlock": "form",
+  "version": "1.0.0",
+  "created": "2026-01-10T11:24:11.459Z",
+  "sourceContext": {
+    "originUrl": "https://business.att.com/",
+    "originPage": "AT&T Business Homepage",
+    "blockPosition": "various"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "lead-capture",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + fields + submit button",
+    "fieldCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "contact forms",
+      "lead generation",
+      "inquiry forms"
+    ],
+    "notSuitableFor": [
+      "complex multi-step forms",
+      "registration flows"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/content/att-business/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-10T11:24:11.459Z"
+  }
+}

@@ -1,0 +1,185 @@
+/*
+ * Columns Block - AT&T Business Style
+ * Flexible multi-column layout
+ */
+
+.columns-media > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.columns-media > div > div {
+  order: 1;
+}
+
+.columns-media > div > .columns-img-col {
+  order: 0;
+}
+
+.columns-media img {
+  width: 100%;
+  border-radius: var(--radius-m);
+}
+
+.columns-media > div > .columns-img-col img {
+  display: block;
+}
+
+/* Column content styling */
+.columns-media h2, .columns-media h3, .columns-media h4 {
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-s);
+}
+
+.columns-media p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.columns-media a.button {
+  margin-top: var(--spacing-s);
+}
+
+/*
+ * Column Variants
+ */
+
+/* Centered content */
+.columns-media.centered > div > div {
+  text-align: center;
+}
+
+/* Reversed order on mobile */
+.columns-media.reversed > div > div {
+  order: 0;
+}
+
+.columns-media.reversed > div > .columns-img-col {
+  order: 1;
+}
+
+/* With background */
+.columns-media.with-bg > div > div {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-l);
+  border-radius: var(--radius-m);
+}
+
+/* Card style columns */
+.columns-media.cards > div > div {
+  background-color: var(--color-background);
+  padding: var(--spacing-l);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-m);
+}
+
+/* Narrow gap */
+.columns-media.narrow-gap > div {
+  gap: var(--spacing-s);
+}
+
+/* Wide gap */
+.columns-media.wide-gap > div {
+  gap: var(--spacing-xl);
+}
+
+/*
+ * Desktop Layout
+ */
+@media (width >= 900px) {
+  .columns-media > div {
+    align-items: center;
+    flex-direction: row;
+    gap: var(--spacing-l);
+  }
+
+  .columns-media > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  /* Fixed ratios */
+  .columns-media.ratio-60-40 > div > div:first-child {
+    flex: 60;
+  }
+
+  .columns-media.ratio-60-40 > div > div:last-child {
+    flex: 40;
+  }
+
+  .columns-media.ratio-40-60 > div > div:first-child {
+    flex: 40;
+  }
+
+  .columns-media.ratio-40-60 > div > div:last-child {
+    flex: 60;
+  }
+
+  .columns-media.ratio-70-30 > div > div:first-child {
+    flex: 70;
+  }
+
+  .columns-media.ratio-70-30 > div > div:last-child {
+    flex: 30;
+  }
+
+  .columns-media.ratio-30-70 > div > div:first-child {
+    flex: 30;
+  }
+
+  .columns-media.ratio-30-70 > div > div:last-child {
+    flex: 70;
+  }
+
+  /* Three columns */
+  .columns-media.three > div > div {
+    flex: 1;
+  }
+
+  /* Four columns */
+  .columns-media.four > div > div {
+    flex: 1;
+  }
+
+  /* Top aligned */
+  .columns-media.top > div {
+    align-items: flex-start;
+  }
+
+  /* Bottom aligned */
+  .columns-media.bottom > div {
+    align-items: flex-end;
+  }
+
+  /* Reversed on desktop */
+  .columns-media.reversed > div > div:first-child {
+    order: 1;
+  }
+
+  .columns-media.reversed > div > div:last-child {
+    order: 0;
+  }
+
+  /* Wide gap */
+  .columns-media.wide-gap > div {
+    gap: var(--spacing-xxl);
+  }
+}
+
+/*
+ * Dark variant
+ */
+.columns-media.dark h2,
+.columns-media.dark h3,
+.columns-media.dark h4 {
+  color: var(--color-text-inverse);
+}
+
+.columns-media.dark p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.columns-media.dark a:not(.button) {
+  color: var(--color-background-light);
+}

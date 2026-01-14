@@ -1,0 +1,251 @@
+/*
+ * Cards Block - AT&T Business Style
+ * Flexible card grid for offers, features, and content
+ */
+
+.cards-story > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-m);
+}
+
+.cards-story > ul > li {
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.cards-story > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-l);
+}
+
+/* Card image */
+.cards-story .cards-card-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-story > ul > li img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.cards-story > ul > li:hover img {
+  transform: scale(1.05);
+}
+
+/* Card body */
+.cards-story .cards-card-body {
+  padding: var(--spacing-m);
+}
+
+.cards-story .cards-card-body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Typography */
+.cards-story h2, .cards-story h3, .cards-story h4 {
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.cards-story h3 {
+  font-size: var(--heading-size-h4);
+  letter-spacing: var(--letter-spacing-h4);
+}
+
+.cards-story p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-normal);
+}
+
+/* Eyebrow text (first p before heading) */
+.cards-story .cards-card-body > p:first-child:has(+ h2),
+.cards-story .cards-card-body > p:first-child:has(+ h3),
+.cards-story .cards-card-body > p:first-child:has(+ h4),
+.cards-story .cards-card-body > p:first-child strong:only-child {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xxs);
+}
+
+/* Card button */
+.cards-story a.button {
+  display: inline-flex;
+  margin-top: var(--spacing-s);
+  padding: var(--button-padding);
+  min-height: var(--button-min-height);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-color);
+  border-radius: var(--button-border-radius);
+  font-size: var(--button-font-size);
+}
+
+.cards-story a.button:hover {
+  background-color: var(--button-primary-bg-hover);
+}
+
+/* Text link in cards */
+.cards-story .cards-card-body a:not(.button) {
+  color: var(--color-text-link);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-s);
+}
+
+.cards-story .cards-card-body a:not(.button):hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+/*
+ * Card Variants
+ */
+
+/* Offer cards - with border and shadow */
+.cards-story.offer > ul > li {
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-s);
+}
+
+.cards-story.offer > ul > li:hover {
+  border-color: var(--color-att-light-blue);
+  box-shadow: var(--shadow-m);
+}
+
+/* Feature cards - icon + text, no image */
+.cards-story.feature > ul {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.cards-story.feature > ul > li {
+  text-align: center;
+  padding: var(--spacing-l);
+}
+
+.cards-story.feature .cards-card-image {
+  margin-bottom: var(--spacing-s);
+}
+
+.cards-story.feature .cards-card-image img {
+  width: 64px;
+  height: 64px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.cards-story.feature .cards-card-body {
+  padding: 0;
+}
+
+/* News cards - date styling */
+.cards-story.news .cards-card-body > p:first-child {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-att-light-blue);
+  margin-bottom: var(--spacing-xxs);
+}
+
+/* Horizontal cards - image on left */
+.cards-story.horizontal > ul {
+  grid-template-columns: 1fr;
+}
+
+.cards-story.horizontal > ul > li {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.cards-story.horizontal .cards-card-image img {
+  aspect-ratio: 1;
+  height: 100%;
+}
+
+/* Large cards - fewer per row */
+.cards-story.large > ul {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.cards-story.large > ul > li img {
+  aspect-ratio: 3 / 2;
+}
+
+/* Small cards - more per row */
+.cards-story.small > ul {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-s);
+}
+
+.cards-story.small .cards-card-body {
+  padding: var(--spacing-s);
+}
+
+/* Dark variant - for dark section backgrounds */
+.cards-story.dark > ul > li {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cards-story.dark h3, .cards-story.dark h4 {
+  color: var(--color-text-inverse);
+}
+
+.cards-story.dark p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cards-story.dark a:not(.button) {
+  color: var(--color-background-light);
+}
+
+/* No-image cards - text only */
+.cards-story.no-image > ul > li {
+  border: 1px solid var(--color-border-light);
+}
+
+.cards-story.no-image .cards-card-image {
+  display: none;
+}
+
+/*
+ * Responsive Adjustments
+ */
+@media (width >= 768px) {
+  .cards-story > ul {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .cards-story.horizontal > ul > li {
+    grid-template-columns: 250px 1fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .cards-story > ul {
+    gap: var(--spacing-l);
+  }
+
+  /* Fixed column layouts */
+  .cards-story.two-columns > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-story.three-columns > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-story.four-columns > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

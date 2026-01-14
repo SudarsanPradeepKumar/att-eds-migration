@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-story",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-10T11:24:11.418Z",
+  "sourceContext": {
+    "originUrl": "https://business.att.com/",
+    "originPage": "AT&T Business Homepage",
+    "blockPosition": "various"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "content-listing",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + category + heading + description",
+    "itemCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "case studies",
+      "success stories",
+      "article listings"
+    ],
+    "notSuitableFor": [
+      "icon navigation",
+      "promotional offers"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/content/att-business/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-10T11:24:11.418Z"
+  }
+}

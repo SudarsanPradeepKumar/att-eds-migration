@@ -1,73 +1,73 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * AT&T Business & FirstNet Multi-Site Styles
+ * Design system extracted from business.att.com
+ */
+
+/* Import design tokens */
+@import url('tokens.css');
+
+/*
+ * ===========================================
+ * FONT FALLBACKS
+ * ===========================================
+ */
+
+/* AT&T Aleck Sans fallback fonts */
+@font-face {
+  font-family: attAleckSans-fallback;
+  size-adjust: 100%;
+  src: local('Helvetica Neue'), local('Helvetica'), local('Arial');
+}
+
+@font-face {
+  font-family: attAleckSans-bold-fallback;
+  size-adjust: 100%;
+  src: local('Helvetica Neue Bold'), local('Helvetica Bold'), local('Arial Bold');
+}
+
+/*
+ * ===========================================
+ * CSS CUSTOM PROPERTIES (Legacy Mapping)
+ * ===========================================
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* Colors - mapped to tokens */
+  --background-color: var(--color-background);
+  --light-color: var(--color-background-alt);
+  --dark-color: var(--color-text-secondary);
+  --text-color: var(--color-text-primary);
+  --link-color: var(--color-text-link);
+  --link-hover-color: var(--color-text-link-hover);
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Fonts - mapped to AT&T Aleck Sans */
+  --body-font-family: var(--font-family-primary);
+  --heading-font-family: var(--font-family-heading);
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* Body sizes */
+  --body-font-size-m: var(--font-size-m);
+  --body-font-size-s: var(--font-size-s);
+  --body-font-size-xs: var(--font-size-xs);
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
-  /* nav height */
-  --nav-height: 64px;
+  /* Heading sizes */
+  --heading-font-size-xxl: var(--heading-size-h1);
+  --heading-font-size-xl: var(--heading-size-h2);
+  --heading-font-size-l: var(--heading-size-h3);
+  --heading-font-size-m: var(--heading-size-h4);
+  --heading-font-size-s: var(--heading-size-h5);
+  --heading-font-size-xs: var(--heading-size-h6);
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
+/*
+ * ===========================================
+ * BASE STYLES
+ * ===========================================
+ */
 
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -77,12 +77,20 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.appear {
   display: block;
 }
+
+/*
+ * ===========================================
+ * HEADER & FOOTER
+ * ===========================================
+ */
 
 header {
   height: var(--nav-height);
@@ -98,66 +106,89 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+/*
+ * ===========================================
+ * TYPOGRAPHY
+ * ===========================================
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-s);
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-dark);
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
-
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: var(--letter-spacing-h1);
 }
 
-code,
-pre {
-  font-size: var(--body-font-size-s);
+h2 {
+  font-size: var(--heading-font-size-xl);
+  letter-spacing: var(--letter-spacing-h2);
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-s);
 }
 
-pre {
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
-  overflow-x: auto;
-  white-space: pre;
+h3 {
+  font-size: var(--heading-font-size-l);
+  letter-spacing: var(--letter-spacing-h3);
 }
 
-main > div {
-  margin: 40px 16px;
+h4 {
+  font-size: var(--heading-font-size-m);
+  letter-spacing: var(--letter-spacing-h4);
 }
 
-input,
-textarea,
-select,
-button {
-  font: inherit;
+h5 {
+  font-size: var(--heading-font-size-s);
 }
 
-/* links */
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 0;
+  margin-bottom: var(--spacing-s);
+}
+
+p {
+  line-height: var(--line-height-normal);
+}
+
+/* Small/fine print text */
+.text-small,
+small {
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+}
+
+/* Eyebrow/label text */
+.eyebrow {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/*
+ * ===========================================
+ * LINKS
+ * ===========================================
+ */
+
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color var(--transition-normal);
 }
 
 a:hover {
@@ -165,27 +196,40 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
+a:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/*
+ * ===========================================
+ * BUTTONS (AT&T Style)
+ * ===========================================
+ */
+
 a.button:any-link,
 button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  display: inline-block;
-  max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
+  min-height: var(--button-min-height);
+  margin: var(--spacing-xs) 0;
+  padding: var(--button-padding);
+  border: none;
+  border-radius: var(--button-border-radius);
+  font-family: var(--font-family-heading);
+  font-size: var(--button-font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--button-line-height);
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-color);
   cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: background-color var(--button-transition),
+              transform var(--button-transition),
+              box-shadow var(--button-transition);
   white-space: nowrap;
 }
 
@@ -193,22 +237,137 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
+  background-color: var(--button-primary-bg-hover);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+a.button:active,
+button:active {
+  transform: translateY(0);
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  background-color: var(--color-border-light);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  transform: none;
 }
 
+/* Secondary button - outline style */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: var(--button-secondary-bg);
+  color: var(--button-primary-bg);
+  border: 2px solid var(--button-primary-bg);
 }
+
+a.button.secondary:hover,
+a.button.secondary:focus,
+button.secondary:hover,
+button.secondary:focus {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-color);
+}
+
+/* Light secondary button (for dark backgrounds) */
+a.button.secondary.light,
+button.secondary.light {
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+}
+
+a.button.secondary.light:hover,
+button.secondary.light:focus {
+  background-color: var(--color-text-inverse);
+  color: var(--button-primary-bg);
+}
+
+/* Text link button style */
+a.button.text,
+button.text {
+  background-color: transparent;
+  color: var(--button-text-color);
+  padding: 0 0 var(--spacing-xs);
+  min-height: auto;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+}
+
+a.button.text:hover,
+button.text:hover {
+  background-color: transparent;
+  color: var(--button-text-color-hover);
+  border-bottom-color: var(--button-text-color-hover);
+  transform: none;
+}
+
+/*
+ * ===========================================
+ * FORMS
+ * ===========================================
+ */
+
+input,
+textarea,
+select {
+  font-family: var(--font-family-primary);
+  font-size: var(--input-font-size);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+  width: 100%;
+  padding: var(--input-padding);
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: var(--input-border-focus);
+  box-shadow: var(--input-box-shadow-focus);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Checkbox and radio custom styling */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: var(--spacing-xs);
+  accent-color: var(--color-att-light-blue);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-s);
+  color: var(--color-text-dark);
+}
+
+/*
+ * ===========================================
+ * IMAGES & MEDIA
+ * ===========================================
+ */
 
 main img {
   max-width: 100%;
@@ -227,15 +386,44 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/*
+ * ===========================================
+ * CODE & PRE
+ * ===========================================
+ */
+
+code,
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--body-font-size-s);
+}
+
+pre {
+  padding: var(--spacing-s);
+  border-radius: var(--radius-m);
+  background-color: var(--light-color);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/*
+ * ===========================================
+ * SECTIONS & LAYOUT
+ * ===========================================
+ */
+
+main > div {
+  margin: var(--spacing-xl) var(--spacing-s);
+}
+
 main > .section {
-  margin: 40px 0;
+  margin: var(--spacing-xl) 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--max-content-width);
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--spacing-m);
 }
 
 main > .section:first-of-type {
@@ -244,14 +432,115 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0 var(--spacing-l);
   }
 }
 
-/* section metadata */
+/*
+ * ===========================================
+ * SECTION VARIANTS
+ * ===========================================
+ */
+
+/* Light section */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: var(--color-background-alt);
   margin: 0;
-  padding: 40px 0;
+  padding: var(--spacing-xl) 0;
+}
+
+/* Dark section */
+main .section.dark {
+  background-color: var(--color-surface-dark);
+  color: var(--color-text-inverse);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6 {
+  color: var(--color-text-inverse);
+}
+
+main .section.dark a:any-link {
+  color: var(--color-background-light);
+}
+
+main .section.dark a:hover {
+  color: var(--color-text-inverse);
+}
+
+/* Blue section (AT&T branded) */
+main .section.blue {
+  background-color: var(--color-att-blue);
+  color: var(--color-text-inverse);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
+}
+
+main .section.blue h1,
+main .section.blue h2,
+main .section.blue h3,
+main .section.blue h4 {
+  color: var(--color-text-inverse);
+}
+
+/* Light blue tint section */
+main .section.light-blue {
+  background-color: var(--color-background-light);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
+}
+
+/*
+ * ===========================================
+ * UTILITY CLASSES
+ * ===========================================
+ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*
+ * ===========================================
+ * RESPONSIVE UTILITIES
+ * ===========================================
+ */
+
+@media (width < 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (width >= 768px) {
+  .hide-desktop {
+    display: none !important;
+  }
 }

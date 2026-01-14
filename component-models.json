@@ -1,0 +1,459 @@
+{
+  "id": "att-firstnet-multisite",
+  "version": "1.0.0",
+  "groups": [
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "components": ["header", "footer", "quick-links"]
+    },
+    {
+      "id": "hero",
+      "title": "Hero & Banners",
+      "components": ["hero", "banner", "cta-strip"]
+    },
+    {
+      "id": "content",
+      "title": "Content",
+      "components": ["columns", "cards", "carousel", "tabs", "accordion"]
+    },
+    {
+      "id": "features",
+      "title": "Features",
+      "components": ["feature-list", "value-props", "pricing-cards"]
+    },
+    {
+      "id": "forms",
+      "title": "Forms",
+      "components": ["form"]
+    }
+  ],
+  "components": [
+    {
+      "id": "header",
+      "title": "Header",
+      "description": "Site navigation header with logo and menu",
+      "model": {
+        "fields": [
+          {
+            "name": "logo",
+            "title": "Logo",
+            "type": "reference",
+            "description": "Site logo image"
+          },
+          {
+            "name": "navItems",
+            "title": "Navigation Items",
+            "type": "array",
+            "itemType": "object",
+            "fields": [
+              { "name": "label", "title": "Label", "type": "text" },
+              { "name": "url", "title": "URL", "type": "url" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero",
+      "title": "Hero",
+      "description": "Large hero section with headline, description, and CTA",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "default", "label": "Default" },
+              { "value": "carousel", "label": "Carousel" },
+              { "value": "split", "label": "Split Layout" },
+              { "value": "centered", "label": "Centered" }
+            ]
+          },
+          {
+            "name": "eyebrow",
+            "title": "Eyebrow Text",
+            "type": "text",
+            "description": "Small text above headline"
+          },
+          {
+            "name": "headline",
+            "title": "Headline",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "description",
+            "title": "Description",
+            "type": "richtext"
+          },
+          {
+            "name": "image",
+            "title": "Background/Hero Image",
+            "type": "reference"
+          },
+          {
+            "name": "primaryCta",
+            "title": "Primary CTA",
+            "type": "object",
+            "fields": [
+              { "name": "label", "title": "Label", "type": "text" },
+              { "name": "url", "title": "URL", "type": "url" }
+            ]
+          },
+          {
+            "name": "secondaryCta",
+            "title": "Secondary CTA",
+            "type": "object",
+            "fields": [
+              { "name": "label", "title": "Label", "type": "text" },
+              { "name": "url", "title": "URL", "type": "url" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "cards",
+      "title": "Cards",
+      "description": "Versatile card layout for various content types",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "default", "label": "Default" },
+              { "value": "offer", "label": "Offer Card" },
+              { "value": "product", "label": "Product Card" },
+              { "value": "news", "label": "News/Article Card" },
+              { "value": "feature", "label": "Feature Card" },
+              { "value": "icon", "label": "Icon Card" }
+            ]
+          },
+          {
+            "name": "columns",
+            "title": "Number of Columns",
+            "type": "select",
+            "options": [
+              { "value": "2", "label": "2 Columns" },
+              { "value": "3", "label": "3 Columns" },
+              { "value": "4", "label": "4 Columns" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "carousel",
+      "title": "Carousel",
+      "description": "Sliding content carousel",
+      "model": {
+        "fields": [
+          {
+            "name": "autoplay",
+            "title": "Autoplay",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "showDots",
+            "title": "Show Navigation Dots",
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "name": "showArrows",
+            "title": "Show Navigation Arrows",
+            "type": "boolean",
+            "default": true
+          },
+          {
+            "name": "interval",
+            "title": "Autoplay Interval (ms)",
+            "type": "number",
+            "default": 5000
+          }
+        ]
+      }
+    },
+    {
+      "id": "columns",
+      "title": "Columns",
+      "description": "Multi-column layout container",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "default", "label": "Default" },
+              { "value": "equal", "label": "Equal Width" },
+              { "value": "wide-left", "label": "Wide Left" },
+              { "value": "wide-right", "label": "Wide Right" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "banner",
+      "title": "Banner",
+      "description": "Promotional or informational banner",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "default", "label": "Default" },
+              { "value": "highlight", "label": "Highlight" },
+              { "value": "award", "label": "Award/Recognition" },
+              { "value": "cta", "label": "Call to Action" },
+              { "value": "guarantee", "label": "Guarantee (AT&T)" },
+              { "value": "mission", "label": "Mission (FirstNet)" }
+            ]
+          },
+          {
+            "name": "headline",
+            "title": "Headline",
+            "type": "text"
+          },
+          {
+            "name": "description",
+            "title": "Description",
+            "type": "richtext"
+          },
+          {
+            "name": "cta",
+            "title": "CTA Button",
+            "type": "object",
+            "fields": [
+              { "name": "label", "title": "Label", "type": "text" },
+              { "name": "url", "title": "URL", "type": "url" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "feature-list",
+      "title": "Feature List",
+      "description": "List of features with icons and descriptions",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "horizontal", "label": "Horizontal" },
+              { "value": "vertical", "label": "Vertical" },
+              { "value": "grid", "label": "Grid" }
+            ]
+          },
+          {
+            "name": "columns",
+            "title": "Number of Columns",
+            "type": "select",
+            "options": [
+              { "value": "2", "label": "2 Columns" },
+              { "value": "3", "label": "3 Columns" },
+              { "value": "4", "label": "4 Columns" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "value-props",
+      "title": "Value Propositions",
+      "description": "Display key value propositions",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "icon", "label": "With Icons" },
+              { "value": "image", "label": "With Images" },
+              { "value": "numbered", "label": "Numbered" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "pricing-cards",
+      "title": "Pricing Cards",
+      "description": "Plan comparison pricing cards",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "standard", "label": "Standard" },
+              { "value": "highlighted", "label": "With Highlighted Plan" },
+              { "value": "comparison", "label": "Comparison Table" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "description": "Tabbed content sections",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "horizontal", "label": "Horizontal Tabs" },
+              { "value": "vertical", "label": "Vertical Tabs" },
+              { "value": "pills", "label": "Pill Style" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "description": "Expandable content sections",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "faq", "label": "FAQ Style" },
+              { "value": "details", "label": "Details" }
+            ]
+          },
+          {
+            "name": "allowMultiple",
+            "title": "Allow Multiple Open",
+            "type": "boolean",
+            "default": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "form",
+      "title": "Form",
+      "description": "Contact or lead capture form",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "contact", "label": "Contact Form" },
+              { "value": "signup", "label": "Sign Up Form" },
+              { "value": "newsletter", "label": "Newsletter" },
+              { "value": "eligibility", "label": "Eligibility Check (FirstNet)" }
+            ]
+          },
+          {
+            "name": "formId",
+            "title": "Form ID",
+            "type": "text",
+            "description": "Unique identifier for form submissions"
+          },
+          {
+            "name": "submitLabel",
+            "title": "Submit Button Label",
+            "type": "text",
+            "default": "Submit"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quick-links",
+      "title": "Quick Links",
+      "description": "Horizontal scrollable navigation strip",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "text-only", "label": "Text Only" },
+              { "value": "icon-text", "label": "Icon + Text" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "cta-strip",
+      "title": "CTA Strip",
+      "description": "Call-to-action section",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "centered", "label": "Centered" },
+              { "value": "split", "label": "Split Layout" }
+            ]
+          },
+          {
+            "name": "headline",
+            "title": "Headline",
+            "type": "text"
+          },
+          {
+            "name": "description",
+            "title": "Description",
+            "type": "text"
+          },
+          {
+            "name": "primaryCta",
+            "title": "Primary CTA",
+            "type": "object",
+            "fields": [
+              { "name": "label", "title": "Label", "type": "text" },
+              { "name": "url", "title": "URL", "type": "url" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "footer",
+      "title": "Footer",
+      "description": "Site footer with links and legal",
+      "model": {
+        "fields": [
+          {
+            "name": "variant",
+            "title": "Variant",
+            "type": "select",
+            "options": [
+              { "value": "mega", "label": "Mega Footer" },
+              { "value": "compact", "label": "Compact Footer" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

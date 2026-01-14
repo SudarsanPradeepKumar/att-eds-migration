@@ -13,6 +13,12 @@ import {
   loadCSS,
 } from './aem.js';
 
+import {
+  initSite,
+  loadSiteStyles,
+  getSiteConfig,
+} from './site-config.js';
+
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
@@ -94,8 +100,15 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
+  // Initialize site detection and apply theme class
+  initSite();
+
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+
+  // Load site-specific styles
+  await loadSiteStyles();
+
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

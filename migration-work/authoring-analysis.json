@@ -1,0 +1,276 @@
+{
+  "url": "https://www.firstnet.com/",
+  "analysisDate": "2026-01-13",
+  "variantMapping": {
+    "hero-dark": "hero (dark)",
+    "cards-promo": "cards (promo)",
+    "cards-feature": "cards (feature)",
+    "cards-news": "cards (news)",
+    "form-newsletter": "form (newsletter)"
+  },
+  "sections": [
+    {
+      "number": 1,
+      "name": "Quick Links Bar",
+      "background": "light",
+      "sectionMetadata": null,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Horizontal row of 8 quick link buttons with icons",
+          "decision": "skip",
+          "rationale": "Navigation-style quick links are better handled by header/nav component or can be added as enhancement later"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Hero",
+      "background": "dark",
+      "sectionMetadata": {"style": "dark-background"},
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Eyebrow text, main heading, description, and CTA button with hero image background",
+          "decision": "block",
+          "blockName": "hero",
+          "variant": "dark",
+          "rationale": "Classic hero pattern with eyebrow, heading, description, and CTA - use hero block with dark variant",
+          "content": {
+            "eyebrow": "MISSION-CRITICAL COMMUNICATIONS",
+            "heading": "America's first responder network",
+            "description": "2.99 million square miles of coverage dedicated to first responders and public safety",
+            "cta": {
+              "text": "Check eligibility",
+              "url": "/eligibility.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Discounts/Offers",
+      "background": "light",
+      "sectionMetadata": null,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading with subheading",
+          "decision": "default-content",
+          "rationale": "Simple heading and subheading can be default content",
+          "content": {
+            "heading": "Discounts for first responders",
+            "subheading": "Switch to FirstNet and take advantage of special offers available"
+          }
+        },
+        {
+          "sequence": 2,
+          "description": "Grid of 3 promotional offer cards",
+          "decision": "block",
+          "blockName": "cards",
+          "variant": "promo",
+          "rationale": "Repeating grid of promotional cards with images, eyebrow, heading, description, legal text, and CTAs",
+          "content": {
+            "cards": [
+              {
+                "image": "apple-watch-ipad-offer.jpg",
+                "eyebrow": "LIMITED TIME OFFER",
+                "heading": "Apple Watch SE 3 and iPad",
+                "description": "$0.99/mo each with iPhone 17 purchase",
+                "cta": "Shop now"
+              },
+              {
+                "image": "contract-buyout.jpg",
+                "eyebrow": "SWITCH OFFER",
+                "heading": "$800/line to break your contract",
+                "description": "We'll help you switch to FirstNet",
+                "cta": "Learn more"
+              },
+              {
+                "image": "family-plan.jpg",
+                "eyebrow": "FAMILY SAVINGS",
+                "heading": "FirstNet & Family",
+                "description": "Families save 25% on AT&T lines",
+                "cta": "Get details"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Why FirstNet",
+      "background": "dark",
+      "sectionMetadata": {"style": "dark-background"},
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading with subheading",
+          "decision": "default-content",
+          "rationale": "Simple heading and subheading as default content",
+          "content": {
+            "heading": "Why FirstNet for 5G public safety",
+            "subheading": "Built from the ground up to support emergency services"
+          }
+        },
+        {
+          "sequence": 2,
+          "description": "Grid of 3 feature items with icons",
+          "decision": "block",
+          "blockName": "cards",
+          "variant": "feature",
+          "rationale": "Repeating grid of feature items with icons, titles, and descriptions",
+          "content": {
+            "cards": [
+              {
+                "icon": "capacity-icon",
+                "heading": "Enough capacity for every first responder",
+                "description": "Dedicated lane for public safety communications"
+              },
+              {
+                "icon": "network-icon",
+                "heading": "The largest network for public safety",
+                "description": "First Priority, speed, and 5G coverage"
+              },
+              {
+                "icon": "accountability-icon",
+                "heading": "Unprecedented accountability",
+                "description": "Public-private partnership ensuring reliability"
+              }
+            ]
+          }
+        },
+        {
+          "sequence": 3,
+          "description": "CTA button and legal disclaimer",
+          "decision": "default-content",
+          "rationale": "Simple CTA and legal text as default content",
+          "content": {
+            "cta": {
+              "text": "Learn more",
+              "url": "/power-of-firstnet.html"
+            },
+            "legal": "5G coverage not available everywhere"
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Latest News",
+      "background": "light",
+      "sectionMetadata": null,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading",
+          "decision": "default-content",
+          "rationale": "Simple heading as default content",
+          "content": {
+            "heading": "Latest news from public safety's network"
+          }
+        },
+        {
+          "sequence": 2,
+          "description": "Grid of 3 news article cards",
+          "decision": "block",
+          "blockName": "cards",
+          "variant": "news",
+          "rationale": "Repeating grid of news cards with images, category tags, titles, descriptions, and read more links",
+          "content": {
+            "cards": [
+              {
+                "image": "firstnet-fusion.jpg",
+                "category": "PRODUCT LAUNCH",
+                "heading": "Introducing FirstNet Fusion",
+                "description": "New platform for mission-critical communications",
+                "link": "/community/firstnet-fusion.html"
+              },
+              {
+                "image": "stress-relief.jpg",
+                "category": "HEALTH AND WELLNESS",
+                "heading": "Stress relief for emergency physicians",
+                "description": "Supporting first responder mental health",
+                "link": "/community/stress-relief.html"
+              },
+              {
+                "image": "town-of-duck.jpg",
+                "category": "LAW ENFORCEMENT",
+                "heading": "Town of Duck keeps residents safe",
+                "description": "How FirstNet supports local law enforcement",
+                "link": "/community/town-of-duck.html"
+              }
+            ]
+          }
+        },
+        {
+          "sequence": 3,
+          "description": "Arrow link to community page",
+          "decision": "default-content",
+          "rationale": "Simple link as default content",
+          "content": {
+            "link": {
+              "text": "Explore more from the FirstNet community",
+              "url": "/community.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Contact CTA",
+      "background": "grey",
+      "sectionMetadata": {"style": "grey-background"},
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Centered heading with CTA button",
+          "decision": "default-content",
+          "rationale": "Simple centered heading and CTA - can be default content with centered styling",
+          "content": {
+            "heading": "Connect with a FirstNet specialist",
+            "cta": {
+              "text": "Contact us",
+              "url": "/contact-us.html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Newsletter Signup",
+      "background": "blue",
+      "sectionMetadata": {"style": "blue-background"},
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Newsletter signup form with heading, description, email input, dropdown, and submit button",
+          "decision": "block",
+          "blockName": "form",
+          "variant": "newsletter",
+          "rationale": "Interactive form with inputs requires form block",
+          "content": {
+            "heading": "LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK",
+            "subheading": "Get connected",
+            "legal": "By providing your email, you consent to receive communications from FirstNet",
+            "fields": [
+              {"type": "email", "label": "Email address", "required": true},
+              {"type": "select", "label": "Category", "options": ["Law Enforcement", "Fire", "EMS", "Emergency Communications", "Other Public Safety"]}
+            ],
+            "submitText": "Submit"
+          }
+        }
+      ]
+    }
+  ],
+  "blockSummary": {
+    "hero": 1,
+    "cards": 3,
+    "form": 1,
+    "defaultContent": 6
+  }
+}

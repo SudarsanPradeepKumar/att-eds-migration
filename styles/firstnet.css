@@ -1,0 +1,970 @@
+/*
+ * FirstNet Theme
+ * Site-specific overrides for firstnet.com
+ * Design tokens extracted from www.firstnet.com (January 2026)
+ */
+
+/* FirstNet Brand Colors */
+.site-firstnet,
+[data-theme="firstnet"] {
+  /* Primary Brand - FirstNet Blue (extracted from buttons/CTAs) */
+  --color-primary: #0568ae;
+  --color-primary-light: #0074b3;
+  --color-primary-dark: #044c80;
+
+  /* Secondary/Accent - FirstNet Red (for alerts/priority) */
+  --color-accent: #c8102e;
+  --color-accent-light: #e41e3a;
+  --color-accent-dark: #9e0c24;
+
+  /* Navy (used for dark sections/footer) */
+  --color-navy: #000000;
+  --color-navy-light: #191919;
+
+  /* Alert/Safety Orange */
+  --color-safety-orange: #ff6600;
+
+  /* Neutral Palette */
+  --color-background: #ffffff;
+  --color-background-alt: #f5f7f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fafbfc;
+
+  /* Text Colors */
+  --color-text-primary: #191919;
+  --color-text-secondary: #5a5a5a;
+  --color-text-tertiary: #8c8c8c;
+  --color-text-inverse: #ffffff;
+  --color-text-link: #0568ae;
+  --color-text-link-hover: #0074b3;
+
+  /* Border Colors */
+  --color-border: #d1d5db;
+  --color-border-light: #e5e7eb;
+
+  /* FirstNet Specific */
+  --color-first-priority: #c8102e;
+  --color-public-safety: #0568ae;
+
+  /* Typography - Brooklyn for headings, ATT Aleck Sans for body */
+  --font-family-primary: 'attAleckSans-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Brooklyn-Medium', 'attAleckSans-Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-medium: 'attAleckSans-Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* FirstNet Heading Sizes (extracted) */
+  --heading-size-h2: 36px;
+  --heading-line-height-h2: 40px;
+  --heading-letter-spacing-h2: -0.36px;
+  --heading-size-h3: 20px;
+  --heading-line-height-h3: 24px;
+
+  /* FirstNet Button Dimensions (extracted) */
+  --button-border-radius: 25px;
+  --button-padding: 10px 45px;
+  --button-padding-secondary: 10px 36px;
+  --button-font-size: 16px;
+}
+
+/* FirstNet Typography */
+.site-firstnet h1,
+.site-firstnet h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-size-h2);
+  line-height: var(--heading-line-height-h2);
+  letter-spacing: var(--heading-letter-spacing-h2);
+}
+
+.site-firstnet h3 {
+  font-family: var(--font-family-medium);
+  font-size: var(--heading-size-h3);
+  line-height: var(--heading-line-height-h3);
+}
+
+.site-firstnet p,
+.site-firstnet body {
+  font-family: var(--font-family-primary);
+}
+
+/* FirstNet Link Styles */
+.site-firstnet a:not(.button) {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-firstnet a:not(.button):hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+/* FirstNet Header Styles */
+.site-firstnet .header {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+}
+
+.site-firstnet .header a {
+  color: var(--color-text-inverse);
+}
+
+.site-firstnet .header .nav-brand {
+  color: var(--color-text-inverse);
+}
+
+/* FirstNet Header - Navigation wrapper */
+.site-firstnet .header .nav-wrapper {
+  max-width: var(--max-content-width-wide);
+  margin: 0 auto;
+  padding: 0 var(--spacing-m);
+}
+
+/* FirstNet Logo in header */
+.site-firstnet .header .nav-brand img {
+  height: 32px;
+  width: auto;
+}
+
+/* FirstNet Main Navigation */
+.site-firstnet .header .nav-sections {
+  background-color: var(--color-navy);
+}
+
+.site-firstnet .header .nav-sections ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-firstnet .header .nav-sections > .default-content-wrapper > ul > li {
+  position: relative;
+}
+
+.site-firstnet .header .nav-sections > .default-content-wrapper > ul > li > a,
+.site-firstnet .header .nav-sections > .default-content-wrapper > ul > li > p > a {
+  display: block;
+  padding: var(--spacing-s) var(--spacing-m);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-s);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.site-firstnet .header .nav-sections > .default-content-wrapper > ul > li > a:hover,
+.site-firstnet .header .nav-sections > .default-content-wrapper > ul > li > p > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* FirstNet Mega Menu Dropdown */
+.site-firstnet .header .nav-sections ul ul {
+  background-color: var(--color-background);
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  box-shadow: var(--shadow-l);
+  padding: var(--spacing-m);
+}
+
+.site-firstnet .header .nav-sections ul ul li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Mega menu category headings */
+.site-firstnet .header .nav-sections ul ul > li:not(:has(a)) {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) 0;
+  margin-top: var(--spacing-s);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.site-firstnet .header .nav-sections ul ul > li:first-child:not(:has(a)) {
+  margin-top: 0;
+}
+
+/* Mega menu links */
+.site-firstnet .header .nav-sections ul ul a {
+  display: block;
+  padding: var(--spacing-xs) 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-s);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-firstnet .header .nav-sections ul ul a:hover {
+  color: var(--color-primary);
+}
+
+/* FirstNet Quick Links Bar (horizontal scroll on mobile) */
+.site-firstnet .header .nav-quick-links {
+  background-color: var(--color-navy-light);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-firstnet .header .nav-quick-links::-webkit-scrollbar {
+  display: none;
+}
+
+.site-firstnet .header .nav-quick-links ul {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-m);
+  white-space: nowrap;
+}
+
+.site-firstnet .header .nav-quick-links li {
+  flex-shrink: 0;
+}
+
+.site-firstnet .header .nav-quick-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-s);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  border-radius: var(--radius-s);
+  transition: background-color var(--transition-fast);
+}
+
+.site-firstnet .header .nav-quick-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* FirstNet Utility Navigation (Sign up, Log in) */
+.site-firstnet .header .nav-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+}
+
+.site-firstnet .header .nav-tools a {
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-s);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-s);
+  border-radius: var(--radius-s);
+  transition: background-color var(--transition-fast);
+}
+
+.site-firstnet .header .nav-tools a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* FirstNet Search Icon */
+.site-firstnet .header .icon-search {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* FirstNet User Icon */
+.site-firstnet .header .icon-user {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* FirstNet Mobile Menu Button */
+.site-firstnet .header .nav-hamburger button {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text-inverse);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.site-firstnet .header .nav-hamburger button span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-inverse);
+  margin: 5px 0;
+  transition: transform var(--transition-fast);
+}
+
+/* Mobile Menu Open State */
+.site-firstnet .header[aria-expanded="true"] .nav-hamburger button span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.site-firstnet .header[aria-expanded="true"] .nav-hamburger button span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-firstnet .header[aria-expanded="true"] .nav-hamburger button span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* FirstNet Header Responsive */
+@media (width >= 900px) {
+  .site-firstnet .header .nav-sections > .default-content-wrapper > ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .site-firstnet .header .nav-sections ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 280px;
+    display: none;
+  }
+
+  .site-firstnet .header .nav-sections > .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-m);
+    min-width: 500px;
+  }
+
+  .site-firstnet .header .nav-hamburger {
+    display: none;
+  }
+}
+
+/* FirstNet Button Styles */
+.site-firstnet a.button:any-link,
+.site-firstnet button.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  font-family: var(--font-family-medium);
+  font-size: var(--button-font-size);
+  font-weight: 400;
+  transition: background-color var(--transition-fast);
+  border: none;
+}
+
+.site-firstnet a.button:hover,
+.site-firstnet button.primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Secondary button - outline style */
+.site-firstnet a.button.secondary,
+.site-firstnet button.secondary {
+  background-color: transparent;
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-text-inverse);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding-secondary);
+}
+
+.site-firstnet a.button.secondary:hover,
+.site-firstnet button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-inverse);
+}
+
+/* Accent button - red for priority actions */
+.site-firstnet a.button.accent,
+.site-firstnet button.accent {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+.site-firstnet a.button.accent:hover,
+.site-firstnet button.accent:hover {
+  background-color: var(--color-accent-dark);
+}
+
+/* FirstNet Card Styles */
+.site-firstnet .cards .card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--card-radius);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.site-firstnet .cards .card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--color-primary);
+}
+
+/* FirstNet Hero Styles */
+.site-firstnet .hero {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+}
+
+.site-firstnet .hero h1,
+.site-firstnet .hero h2 {
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-heading);
+}
+
+.site-firstnet .hero h3 {
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-medium);
+}
+
+.site-firstnet .hero p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero secondary button on dark background */
+.site-firstnet .hero a.button.secondary {
+  border-color: var(--color-text-inverse);
+  color: var(--color-text-inverse);
+}
+
+/* FirstNet Footer Styles */
+.site-firstnet .footer {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-xl) 0;
+}
+
+.site-firstnet .footer .footer-wrapper {
+  max-width: var(--max-content-width-wide);
+  margin: 0 auto;
+  padding: 0 var(--spacing-m);
+}
+
+.site-firstnet .footer a {
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-firstnet .footer a:hover {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
+
+/* Footer Logo Section */
+.site-firstnet .footer > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-m);
+  padding-bottom: var(--spacing-l);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: var(--spacing-l);
+}
+
+.site-firstnet .footer > div > div:first-child p {
+  margin: 0;
+}
+
+.site-firstnet .footer > div > div:first-child img {
+  height: 40px;
+  width: auto;
+}
+
+/* Footer Social Links */
+.site-firstnet .footer > div > div:first-child ul {
+  display: flex;
+  gap: var(--spacing-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-firstnet .footer > div > div:first-child ul li {
+  margin: 0;
+}
+
+.site-firstnet .footer > div > div:first-child ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color var(--transition-fast);
+}
+
+.site-firstnet .footer > div > div:first-child ul a:hover {
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.site-firstnet .footer > div > div:first-child ul .icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Footer Navigation Columns (Sitemap & Support) */
+.site-firstnet .footer > div > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-l);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: var(--spacing-l);
+}
+
+.site-firstnet .footer > div > div:nth-child(2) h3 {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-text-inverse);
+  margin: 0 0 var(--spacing-m) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.site-firstnet .footer > div > div:nth-child(2) ul {
+  list-style: none;
+  margin: 0 0 var(--spacing-l) 0;
+  padding: 0;
+}
+
+.site-firstnet .footer > div > div:nth-child(2) ul li {
+  margin-bottom: var(--spacing-s);
+}
+
+.site-firstnet .footer > div > div:nth-child(2) ul a {
+  font-size: var(--font-size-s);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.site-firstnet .footer > div > div:nth-child(2) ul a:hover {
+  color: var(--color-text-inverse);
+}
+
+/* Footer Legal Links & Copyright */
+.site-firstnet .footer > div > div:nth-child(3) {
+  padding-top: var(--spacing-m);
+}
+
+.site-firstnet .footer > div > div:nth-child(3) ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-s) var(--spacing-m);
+  list-style: none;
+  margin: 0 0 var(--spacing-m) 0;
+  padding: 0;
+}
+
+.site-firstnet .footer > div > div:nth-child(3) ul li {
+  margin: 0;
+}
+
+.site-firstnet .footer > div > div:nth-child(3) ul a {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-firstnet .footer > div > div:nth-child(3) ul a:hover {
+  color: var(--color-text-inverse);
+}
+
+/* Footer Copyright Text */
+.site-firstnet .footer > div > div:nth-child(3) p {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+/* Footer Responsive - Mobile First */
+@media (width < 768px) {
+  .site-firstnet .footer > div > div:first-child {
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-firstnet .footer > div > div:nth-child(2) {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-l);
+    text-align: center;
+  }
+
+  .site-firstnet .footer > div > div:nth-child(3) ul {
+    justify-content: center;
+  }
+
+  .site-firstnet .footer > div > div:nth-child(3) p {
+    text-align: center;
+  }
+}
+
+@media (width >= 768px) {
+  .site-firstnet .footer > div > div:first-child {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-firstnet .footer > div > div:nth-child(2) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .site-firstnet .footer > div > div:nth-child(2) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* First Priority Badge */
+.site-firstnet .first-priority-badge {
+  background-color: var(--color-first-priority);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-xxs) var(--spacing-s);
+  border-radius: var(--radius-s);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mission Critical Banner */
+.site-firstnet .mission-banner {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-l);
+  text-align: center;
+}
+
+.site-firstnet .mission-banner h2 {
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-s);
+}
+
+/* Eligibility Check Section */
+.site-firstnet .eligibility-check {
+  background-color: var(--color-background-alt);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-m);
+  padding: var(--spacing-l);
+}
+
+.site-firstnet .eligibility-check .cta {
+  background-color: var(--color-accent);
+}
+
+/* Public Safety Indicator */
+.site-firstnet .public-safety-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.site-firstnet .public-safety-indicator::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+/* User Type Selector (Agency vs Individual) */
+.site-firstnet .user-type-selector {
+  display: flex;
+  gap: var(--spacing-s);
+  margin-bottom: var(--spacing-l);
+}
+
+.site-firstnet .user-type-selector button {
+  flex: 1;
+  padding: var(--spacing-m);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.site-firstnet .user-type-selector button.active,
+.site-firstnet .user-type-selector button:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-background-alt);
+}
+
+/* Plan Comparison Table */
+.site-firstnet .plan-comparison {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+.site-firstnet .plan-comparison th {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-m);
+}
+
+.site-firstnet .plan-comparison td {
+  padding: var(--spacing-s) var(--spacing-m);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Form Styling */
+.site-firstnet .form input,
+.site-firstnet .form textarea,
+.site-firstnet .form select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--input-radius);
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.site-firstnet .form input:focus,
+.site-firstnet .form textarea:focus,
+.site-firstnet .form select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 38, 62, 0.1);
+}
+
+/* Category Labels */
+.site-firstnet .category-label {
+  display: inline-block;
+  padding: var(--spacing-xxs) var(--spacing-s);
+  background-color: var(--color-background-alt);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-s);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* News/Article Cards */
+.site-firstnet .news-card .category-label {
+  color: var(--color-accent);
+  background-color: rgba(200, 16, 46, 0.1);
+}
+
+/*
+ * ===========================================
+ * FIRSTNET BLOCK STYLES (Phase 2)
+ * ===========================================
+ */
+
+/* Cards Offer Variant - Promotional Cards */
+.site-firstnet .cards.offer > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-m);
+}
+
+.site-firstnet .cards.offer > ul > li {
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-m);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.site-firstnet .cards.offer > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-l);
+}
+
+.site-firstnet .cards.offer .cards-card-body {
+  padding: var(--spacing-m);
+}
+
+/* Offer card eyebrow text */
+.site-firstnet .cards.offer .cards-card-body > div:first-child strong {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+}
+
+/* Offer card headline */
+.site-firstnet .cards.offer .cards-card-body > div:nth-child(2) {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-size-h3);
+  line-height: var(--heading-line-height-h3);
+  color: var(--color-text-primary);
+  margin: var(--spacing-xs) 0;
+}
+
+/* Cards News Variant - Article Cards */
+.site-firstnet .cards.news > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-m);
+}
+
+.site-firstnet .cards.news > ul > li {
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-normal);
+}
+
+.site-firstnet .cards.news > ul > li:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-m);
+}
+
+.site-firstnet .cards.news .cards-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.site-firstnet .cards.news .cards-card-body {
+  padding: var(--spacing-m);
+}
+
+/* News card category label */
+.site-firstnet .cards.news .cards-card-body > div:first-child strong {
+  display: inline-block;
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* News card title */
+.site-firstnet .cards.news .cards-card-body > div:nth-child(2) {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-l);
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* News card description */
+.site-firstnet .cards.news .cards-card-body > div:nth-child(3) {
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* News card read more link */
+.site-firstnet .cards.news .cards-card-body a {
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-s);
+  color: var(--color-text-link);
+}
+
+/* Feature List Block - Why FirstNet Section */
+.site-firstnet .feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-l);
+  margin: var(--spacing-l) 0;
+}
+
+.site-firstnet .feature-list > div {
+  text-align: center;
+  padding: var(--spacing-m);
+}
+
+.site-firstnet .feature-list > div:nth-child(odd) strong {
+  display: block;
+  font-family: var(--font-family-medium);
+  font-size: var(--heading-size-h3);
+  line-height: var(--heading-line-height-h3);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.site-firstnet .feature-list > div:nth-child(even) {
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* Newsletter Form Block */
+.site-firstnet .form.newsletter {
+  background-color: var(--color-navy);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-m);
+}
+
+.site-firstnet .form.newsletter h2,
+.site-firstnet .form.newsletter h3 {
+  color: var(--color-text-inverse);
+  margin-bottom: var(--spacing-s);
+}
+
+.site-firstnet .form.newsletter p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-m);
+}
+
+.site-firstnet .form.newsletter input,
+.site-firstnet .form.newsletter select {
+  background-color: var(--color-background);
+  border: none;
+  border-radius: var(--radius-s);
+  padding: var(--spacing-s) var(--spacing-m);
+  font-size: var(--font-size-m);
+  width: 100%;
+  margin-bottom: var(--spacing-s);
+}
+
+.site-firstnet .form.newsletter button[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  font-family: var(--font-family-medium);
+  font-size: var(--button-font-size);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.site-firstnet .form.newsletter button[type="submit"]:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Contact Section - Dark Background */
+.site-firstnet .section.contact-cta {
+  background-color: var(--color-navy);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.site-firstnet .section.contact-cta h2,
+.site-firstnet .section.contact-cta h3 {
+  color: var(--color-text-inverse);
+}
+
+.site-firstnet .section.contact-cta a.button {
+  background-color: transparent;
+  border: 2px solid var(--color-text-inverse);
+  color: var(--color-text-inverse);
+}
+
+.site-firstnet .section.contact-cta a.button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Adjustments for FirstNet */
+@media (width >= 768px) {
+  .site-firstnet .cards.offer > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-firstnet .cards.news > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-firstnet .feature-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 1024px) {
+  .site-firstnet h1,
+  .site-firstnet h2 {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.48px;
+  }
+}

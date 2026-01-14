@@ -1,0 +1,238 @@
+/*
+ * Accordion Block - AT&T Business Style
+ * Expandable/collapsible content sections
+ */
+
+.accordion {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+
+/* Accordion item */
+.accordion-item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Accordion header/trigger */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-m);
+  background-color: var(--color-background);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-family-medium);
+  font-size: var(--font-size-m);
+  color: var(--color-text-dark);
+  transition: background-color var(--transition-fast);
+  min-height: auto;
+  border-radius: 0;
+}
+
+.accordion-trigger:hover {
+  background-color: var(--color-background-alt);
+  transform: none;
+}
+
+.accordion-trigger:focus {
+  outline: 2px solid var(--color-att-light-blue);
+  outline-offset: -2px;
+}
+
+/* Accordion icon */
+.accordion-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-left: var(--spacing-s);
+  position: relative;
+  transition: transform var(--transition-normal);
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-att-blue);
+  transition: transform var(--transition-normal);
+}
+
+.accordion-icon::before {
+  width: 2px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordion-icon::after {
+  width: 12px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Expanded state */
+.accordion-trigger[aria-expanded="true"] .accordion-icon::before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion-trigger[aria-expanded="true"] {
+  background-color: var(--color-background-alt);
+}
+
+/* Accordion panel/content */
+.accordion-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--transition-normal) ease-out;
+}
+
+.accordion-panel[aria-hidden="false"] {
+  max-height: 1000px;
+  transition: max-height var(--transition-slow) ease-in;
+}
+
+.accordion-content {
+  padding: 0 var(--spacing-m) var(--spacing-m);
+}
+
+.accordion-content p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-normal);
+}
+
+.accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-content a {
+  color: var(--color-text-link);
+}
+
+.accordion-content a:hover {
+  color: var(--color-text-link-hover);
+}
+
+/*
+ * Accordion Variants
+ */
+
+/* No border variant */
+.accordion.no-border {
+  border: none;
+  border-radius: 0;
+}
+
+.accordion.no-border .accordion-item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Separated items */
+.accordion.separated {
+  border: none;
+  border-radius: 0;
+}
+
+.accordion.separated .accordion-item {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--spacing-s);
+}
+
+.accordion.separated .accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Compact variant */
+.accordion.compact .accordion-trigger {
+  padding: var(--spacing-s) var(--spacing-m);
+  font-size: var(--font-size-s);
+}
+
+.accordion.compact .accordion-content {
+  padding: 0 var(--spacing-m) var(--spacing-s);
+}
+
+/* Large variant */
+.accordion.large .accordion-trigger {
+  padding: var(--spacing-l) var(--spacing-m);
+  font-size: var(--font-size-l);
+}
+
+.accordion.large .accordion-content {
+  padding: 0 var(--spacing-m) var(--spacing-l);
+}
+
+/* With icons - accordion items have icons */
+.accordion.with-icons .accordion-trigger {
+  gap: var(--spacing-s);
+}
+
+.accordion.with-icons .accordion-trigger picture,
+.accordion.with-icons .accordion-trigger .icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* Dark variant */
+.accordion.dark {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+}
+
+.accordion.dark .accordion-item {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.accordion.dark .accordion-trigger {
+  background-color: transparent;
+  color: var(--color-text-inverse);
+}
+
+.accordion.dark .accordion-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.accordion.dark .accordion-icon::before,
+.accordion.dark .accordion-icon::after {
+  background-color: var(--color-text-inverse);
+}
+
+.accordion.dark .accordion-content p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.accordion.dark .accordion-content a {
+  color: var(--color-background-light);
+}
+
+/* Blue accent */
+.accordion.blue-accent .accordion-trigger[aria-expanded="true"] {
+  border-left: 3px solid var(--color-att-blue);
+  padding-left: calc(var(--spacing-m) - 3px);
+}
+
+/*
+ * Responsive
+ */
+@media (width >= 768px) {
+  .accordion-trigger {
+    padding: var(--spacing-m) var(--spacing-l);
+  }
+
+  .accordion-content {
+    padding: 0 var(--spacing-l) var(--spacing-m);
+  }
+}

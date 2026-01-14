@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-10T11:24:11.439Z",
+  "sourceContext": {
+    "originUrl": "https://business.att.com/",
+    "originPage": "AT&T Business Homepage",
+    "blockPosition": "various"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "content-layout",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image column + text column with heading, description, CTAs",
+    "columnCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "image + text sections",
+      "product highlights",
+      "promotional content"
+    ],
+    "notSuitableFor": [
+      "multi-column text",
+      "comparison tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/content/att-business/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-10T11:24:11.439Z"
+  }
+}
